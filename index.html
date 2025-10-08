@@ -2,14 +2,34 @@
 <html>
 <head>
   <title>Unduh Sertifikat</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    /* Tambahan CSS sederhana untuk memastikan body dan html memenuhi viewport */
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Mencegah scroll yang tidak perlu */
+    }
+    
+    /* Aturan untuk iframe Anda, bisa disederhanakan */
+    iframe {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        border: none;
+    }
+  </style>
+  
 </head>
 <body>
   <iframe 
     src="https://script.google.com/macros/s/AKfycbzOoSelboNbLvDkcrW_YOTnBse3g0QCNE_bbNFtUL2bNW7EHvDoWvWP4vE00Do0ceYP/exec"
-    width="100%"
-    height="100%"
-    allowfullscreen="true"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+    allowfullscreen="true">
   </iframe>
 
   <script>
@@ -17,6 +37,7 @@
       document.querySelector('iframe')
         .requestFullscreen()
         .catch((err) => {
+          // Pesan ini wajar muncul di banyak browser/HP karena masalah izin
           console.error('Error attempting to enable full-screen mode:', err.message);
         });
     };
